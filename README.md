@@ -76,3 +76,7 @@ python3 binsimScore.py -f <file1.json> -f >file2.json>
 ```
 ./Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
+
+## Access to the entire dataset used in the paper RQs: ##
+The following spreedsheet contains an extended version of our evaluation results:
+(https://figshare.com/s/f34dde8d3d840df19435)
