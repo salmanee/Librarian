@@ -41,9 +41,9 @@ Librarian's structure in a nutshell:
 |       `-- run_extract_fv.sh
 ```
 
-* downloaded_apks_AndroZoo_May-19-2020: Contains the top 200 apps collected from GooglePlay along with their previous releases (obtained from AndroZoo).
+* downloaded_apks_AndroZoo_May-19-2020: Contains the top 200 apps collected from GooglePlay along with their previous releases (obtained from AndroZoo). Due to the large size of this folder (209 GB), this datasets will be provided seprately later. 
 * KnownLibs_FVs: Features vectors extracted from our groundTruth (KnownLibs).
-* UnknownLibs_bins: biniares extracted from apps in *downloaded_apks_AndroZoo_May-19-2020* arranged into folders based on their sha256. (Run: `python3 /scripts/cluster_libs.py` to obtain them)
+* UnknownLibs_bins: biniares extracted from apps in *downloaded_apks_AndroZoo_May-19-2020* arranged into folders based on their sha256. (Run: `python3 /scripts/cluster_libs.py` to obtain them). Due to the large size of this folder (71 GB), this datasets will be provided seprately later.
 * UnknownLibs_FVs: Features vectors extracted from *UnknownLibs_bins*
 * scripts:
   * clusters_libs.py: Extracts biniares from apps and clusters them based on their sha256
