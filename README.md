@@ -1,25 +1,19 @@
 # Librarian:
 
 ## Overview: ##
-LibRARIAN identifies unknown third-party native libraries and their versions (*Unknown Lib Versions*) by (i) extracting features and comparing them against features from a ground truth dataset (*Known Lib Versions*) and (ii) matching identifying “version strings” against common abstracted version information extracted from the ground-truth dataset. The following figure shows the overall workflow of LibRARIAN. 
+The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies unknown third-party native libraries and their versions (Unknown Lib Versions) by:
+(1) extracting features that distinguish major, minor, and patch versions of libraries that are stable across platforms regardless of underlying architecture or compilation environments 
+(2) comparing those features against features from a ground-truth dataset (Known Lib Versions) using a novel similarity metric, bin2sim 
+(3) matching against strings that identify version information of libraries extracted from the ground-truth dataset, which werefer to as Version Identification Strings
 
 ![Figure 1](/images/approach_cropped-1.png) 
-
-Our binary analysis extracts these features and applies a two-step process. First, the Library Identification phase matches an unknown binary to a library. Second, the Version Identification determines the exact version of the library.
-
-
-We design a new similarity metric, bin2sim, to identify libraries and their versions. The following figure shows the overall workflow of this similarity metric. 
-
-![Figure 1](/images/bin2bin_cropped-1.png "Figure 2")
-
-LibRARIAN (i) extracts feature vectors from native binaries and (ii) applies bin2sim to generate a similarity score between source and target feature vectors.
 
 ## Feature Vector Extraction: ##
 Our binary similarity detection is based on the extraction of features from binaries combining both metadata found in ELF files as well as identifying features in different binary sections of the library. All shared libraries included in Android apps are compiled into Executable and Linkable Format (ELF) binaries. Like other object files, ELF binaries contain a symbol table with externally visible identifiers such as function names, global symbols, local symbols, and imported symbols.
 This symbol table is, on one hand, used during loading and linking and, on the other hand, used by binary analysis tools (e.g., *objdump*, *readelf*, *nm*, *pwntools*, or *angr*) to infer information about the binary.
 
 ## Similarity Computation ##
-BinSimScore is used to determine the similarity between feature vectors. Given two binaries b1 and b2 with respective feature vectors FV1 and FV2, the BinSimScore is the size of the intersection of FV1 and FV2 (i.e., the number of common features) over the size of the union of FV1 and FV2 (i.e., the number of unique features). The similarity score is a floating-point value between 0 and 1, with a score of 1 indicating identical features, and a score of 0 indicating no shared features between the two libraries.
+bin2sim is used to determine the similarity between feature vectors. Given two binaries b1 and b2 with respective feature vectors FV1 and FV2, the bin2sim is the size of the intersection of FV1 and FV2 (i.e., the number of common features) over the size of the union of FV1 and FV2 (i.e., the number of unique features). The similarity score is a floating-point value between 0 and 1, with a score of 1 indicating identical features, and a score of 0 indicating no shared features between the two libraries.
 
 ## Librarian 101 ## 
 Librarian's structure in a nutshell:
