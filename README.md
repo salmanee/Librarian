@@ -18,10 +18,10 @@ bin2sim is used to determine the similarity between feature vectors. Given two b
 ## Librarian 101 ## 
 Librarian's structure in a nutshell:
 ```
-|-- downloaded_apks_AndroZoo_May-19-2020
-|-- KnownLibs_FVs
+|-- sample_apps
 |-- UnknownLibs_bins
 |-- UnknownLibs_FVs
+|-- knownLibs_FVs
 |-- scripts
 |   |-- clusters_libs.py
 |   |-- Bin2Bin_Score_Calculator
@@ -35,14 +35,14 @@ Librarian's structure in a nutshell:
 |       `-- run_extract_fv.sh
 ```
 
-* downloaded_apks_AndroZoo_May-19-2020: Contains the top 200 apps collected from GooglePlay along with their previous releases (obtained from AndroZoo). Due to the large size of this folder (209 GB), this datasets will be provided seprately later. 
+* sample_apps: Our repository contains the top 200 apps collected from GooglePlay along with their previous releases (obtained from AndroZoo). Due to the large size of this set (209 GB), we provide only 10 sample apps. 
+* UnknownLibs_bins: biniares extracted from apps in *sample_apps* arranged into folders based on their sha256. (Run: `python3 /Librarian/scripts/cluster_libs.py` to obtain them).
+* UnknownLibs_FVs: Features vectors extracted from *UnknownLibs_bins*.
 * KnownLibs_FVs: Features vectors extracted from our groundTruth (KnownLibs).
-* UnknownLibs_bins: biniares extracted from apps in *downloaded_apks_AndroZoo_May-19-2020* arranged into folders based on their sha256. (Run: `python3 /scripts/cluster_libs.py` to obtain them). Due to the large size of this folder (71 GB), this datasets will be provided seprately later.
-* UnknownLibs_FVs: Features vectors extracted from *UnknownLibs_bins*
 * scripts:
   * clusters_libs.py: Extracts biniares from apps and clusters them based on their sha256
   * Feature_Extractor: Scripts needed to extract feature vectors
-  * Bin2Bin_Score_Calculator: Scripts needed for computing the similarity score between binaries 
+  * Bin2Bin_Score_Calculator: Scripts needed for computing the similarity score between *knownLibs_FVs* and *UnknownLibs_FVs*  
 
 ## Prerequisites: ##
 * Python3
