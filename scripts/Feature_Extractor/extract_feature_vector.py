@@ -106,7 +106,7 @@ def analyze(target):
         print('ERROR: Empty file.')
         print('ERROR: Bailing.')
         return vec
-        mime = str(magic.from_file(target, mime=True))
+    mime = str(magic.from_file(target, mime=True))
     if mime != 'application/x-sharedlib':
         print('ERROR: Expected a ELF shared library but got a:', mime)
         print('ERROR: Bailing.')

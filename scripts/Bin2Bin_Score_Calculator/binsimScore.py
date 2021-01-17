@@ -36,7 +36,7 @@ def computeSimilarity(dict1, dict2):
         (matches, length) =XgetMatchesLen(dict1[comparable], dict2[comparable])
         totalMatches = totalMatches + matches
         totalLen = totalLen + length
-        print('Matches: {} length: {}'.format(matches, length))
+        #print('Matches: {} length: {}'.format(matches, length))
     return totalMatches / totalLen        
 
 if __name__ == "__main__":
@@ -67,4 +67,4 @@ if __name__ == "__main__":
     dict1 = json.load(open(lib1, 'r'))
     dict2 = json.load(open(lib2, 'r'))
     score = computeSimilarity(dict1, dict2)
-    print('{:25s} | {:25s} | Score:{:.2%}'.format(lib1[:-5],lib2[:-5],score))
+    print('{},{},Score:{:.2%}'.format(lib1.replace("/",":")[:-5],lib2.replace("/",":")[:-5],score))
