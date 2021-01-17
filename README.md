@@ -47,6 +47,10 @@ Librarian's structure in a nutshell:
 ## Prerequisites: ##
 * Python3
 * Pre-installation of angr (https://docs.angr.io/introductory-errata/install)
+* Pre-installation of magic:
+```
+sudo apt-get install python3-magic
+```
 
 ## Usage: ##
 All Librarian scripts are found under `/scripts/`:
@@ -56,19 +60,19 @@ python3 clusters_libs.py
 ```
 2. To extract the features vector from one binary, run:
 ```
-python3 extract_feature_vector.py -i <lib.so> -o <out.json>
+scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 ```
 3. To extract the features vectors from a set of binaries, modify `extracted_bins.txt` then run
 ``` 
-./Feature_Extractor/run_extract_fv.sh 
+./scripts/Feature_Extractor/run_extract_fv.sh 
 ```
 4. To compute the similarity score between two feature vectors, run the following command:
 ```
-python3 binsimScore.py -f <file1.json> -f >file2.json>
+python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f >file2.json>
 ```
 5. To compute the similarity between a set of feature vectors, modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` then run:
 ```
-./Bin2Bin_Score_Calculator/run_bin_sim.sh
+./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
 
 ## Access to the entire dataset used in the paper RQs: ##
