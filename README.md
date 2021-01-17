@@ -4,7 +4,7 @@
 The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies unknown third-party native libraries and their versions (Unknown Lib Versions) by:
 (1) extracting features that distinguish major, minor, and patch versions of libraries that are stable across platforms regardless of underlying architecture or compilation environments 
 (2) comparing those features against features from a ground-truth dataset (Known Lib Versions) using a novel similarity metric, bin2sim 
-(3) matching against strings that identify version information of libraries extracted from the ground-truth dataset, which werefer to as Version Identification Strings
+(3) matching against strings that identify version information of libraries extracted from the ground-truth dataset, which we refer to as Version Identification Strings
 
 ![Figure 1](/images/approach_cropped.png) 
 
