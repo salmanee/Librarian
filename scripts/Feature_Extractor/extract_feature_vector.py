@@ -3,6 +3,9 @@
 
 """Parser to extract decent feature strings from shared objects."""
 
+__author__ = "Mathias Payer"
+__credits__ = ["Sumaya Almane", "Arda Unal","Joshua Garcia"]
+__copyright__ = "Copyright 2021, EPFL and UCI"
 __license__ = "GPL"
 __version__ = "2.0"
 
@@ -152,8 +155,8 @@ def analyze(target):
     imported_functions = list(filter(lambda x: not x.startswith(prunelist['fstart']) and not any(y in x for y in prunelist['fcontain']), imported_functions))
     defined_functions = list(filter(lambda x: not x.startswith(prunelist['fstart']) and not any(y in x for y in prunelist['fcontain']), defined_functions))
 
-    print(prunelist['fstart'])
-    print(prunelist['fcontain'])
+    #print(prunelist['fstart'])
+    #print(prunelist['fcontain'])
 
     # Go deep into .rodata and extract strings
     (allstrings, likelyfuncs, debugstrings) = analyzeStrings(target, proj)

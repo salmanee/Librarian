@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """Calculate similarity score for two json files."""
-
+__author__ = "Sumaya Almanee"
+__credits__ = ["Arda Unal", "Mathias Payer" ,"Joshua Garcia"] 
+__copyright__ = "Copyright 2021, EPFL and UCI"
 __license__ = "GPL"
 __version__ = "2.0"
-
 
 import sys, getopt
 import json
@@ -64,7 +65,12 @@ if __name__ == "__main__":
         sys.exit()
     
     # Do the magic
-    dict1 = json.load(open(lib1, 'r'))
-    dict2 = json.load(open(lib2, 'r'))
-    score = computeSimilarity(dict1, dict2)
-    print('{},{},Score:{:.2%}'.format(lib1.replace("/",":")[:-5],lib2.replace("/",":")[:-5],score))
+    try:
+        dict1 = json.load(open(lib1, 'r'))
+        dict2 = json.load(open(lib2, 'r'))
+        score = computeSimilarity(dict1, dict2)
+    except (OSError, IOError) as e:
+        sys.exit()
+
+    if(score>0.85):
+        print('Binary#1:{},Binary#2:{},Score:{:.2f}'.format(os.path.basename(lib1)[:-5],os.path.basename(lib2)[:-5],score))
