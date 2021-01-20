@@ -1,4 +1,4 @@
-# Librarian:
+# Librarian
 
 ## Overview: ##
 The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies unknown third-party native libraries and their versions (Unknown Lib Versions) by:
@@ -12,10 +12,10 @@ The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies u
 Our binary similarity detection is based on the extraction of features from binaries combining both metadata found in ELF files as well as identifying features in different binary sections of the library. All shared libraries included in Android apps are compiled into Executable and Linkable Format (ELF) binaries. Like other object files, ELF binaries contain a symbol table with externally visible identifiers such as function names, global symbols, local symbols, and imported symbols.
 This symbol table is, on one hand, used during loading and linking and, on the other hand, used by binary analysis tools (e.g., *objdump*, *readelf*, *nm*, *pwntools*, or *angr*) to infer information about the binary.
 
-## Similarity Computation ##
+## Similarity Computation: ##
 bin2sim is used to determine the similarity between feature vectors. Given two binaries b_1 and b_2 with respective feature vectors FV_1 and FV_2, the bin2sim is the size of the intersection of FV_1 and FV_2 (i.e., the number of common features) over the size of the union of FV_1 and FV_2 (i.e., the number of unique features). The similarity score is a floating-point value between 0 and 1, with a score of 1 indicating identical features, and a score of 0 indicating no shared features between the two libraries.
 
-## Librarian 101 ## 
+## Librarian 101: ## 
 Librarian's structure in a nutshell:
 ```
 |-- sample_apps
@@ -112,7 +112,7 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
 
-Exampples of what the output will look like when running each of the above commands are provided under `output_examples'
+Examples of what the output will look like when running each of the above commands are provided under `output_examples'
 
 ## Evaluation Results: ##
 
