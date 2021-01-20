@@ -61,7 +61,8 @@ All Librarian scripts are found under `scripts/`:
 python3 clusters_libs.py
 ```
 Note: To extract binaries from a new set or larger set apps, follow these steps:
-1.1. Make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
+
+   1.1. Make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
 ```
 |-- sample_apps
 |   |-- app_name_1
@@ -81,7 +82,8 @@ Note: To extract binaries from a new set or larger set apps, follow these steps:
 |   `-- app_name_n
 
 ```
- 1.2. Modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly.
+ 
+   1.2. Modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly.
  
 2. To extract the features vector from one binary, run:
 ```
@@ -105,5 +107,6 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
 
+Exampples of what the output will look like when running each of the above commands are provided under `output_examples'
 ## Evaluation Results: ##
 
