@@ -58,6 +58,9 @@ sudo apt-get install python3-magic
 ## Usage: ##
 All Librarian scripts are found under `scripts/`:
 1. To Extract binaries from the apps in `sample_apps/`, run the following command:
+1.1. 
+1.2.
+
 ``` 
 python3 clusters_libs.py
 ```
