@@ -61,9 +61,10 @@ All Librarian scripts are found under `scripts/`:
 ``` 
 python3 clusters_libs.py
 ```
-Note: To extract binaries from a new set or larger set apps, follow these steps:
 
+Note: To extract binaries from a new set or larger set apps, follow these steps:
     1.1. Make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
+        
 ```
 |-- sample_apps
 |   |-- app_name_1
@@ -83,8 +84,9 @@ Note: To extract binaries from a new set or larger set apps, follow these steps:
 |   `-- app_name_n
 
 ```
+
    1.2. Modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly.
- 
+   
 2. To extract the features vector from one binary, run:
 ```
 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
