@@ -38,7 +38,8 @@ Librarian's structure in a nutshell:
 ```
 
 * sample_apps: Our repository contains the top 200 apps collected from GooglePlay along with their previous releases, obtained from [AndroZoo](https://androzoo.uni.lu/). Due to the large size of this set (209 GB), we provide only 20 unique android packages as a sample with a total of 32 app versions. e.g. *com.instagram.android* has 7 different versions, where the version name is the sha256 of the app version. Naming app versions after their sha256 will enable us later to mtach each app with [version details](https://androzoo.uni.lu/lists) found in AndroZoo such as: vercode, markets, apk_size etc. 
-* UnknownLibs_bins: This folder ontains biniares extracted from apps in `sample_apps` arranged into folders based on the binary sha256. (Run: `python3 cluster_libs.py` to obtain them). Foor exampple, cluster/folder `ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b*` contains 5 identical binaries (share the same sha256), which were extracted from 5 different apps or app versions. 
+* UnknownLibs_bins: This folder contains biniares extracted from apps in `sample_apps` arranged into folders based on the binary sha256. (Run: `python3 cluster_libs.py` to obtain them). 
+For example, cluster/folder `ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b` contains 5 identical binaries (share the same sha256), which were extracted from 5 different apps or app versions. 
 * UnknownLibs_FVs: Feature vectors extracted from `UnknownLibs_bins` and stored in JSON files.
 * KnownLibs_FVs: Features vectors extracted from our groundTruth (KnownLibs) and stored in JSON files.
 * scripts:
@@ -61,8 +62,7 @@ All Librarian scripts are found under `scripts/`:
 python3 clusters_libs.py
 ```
 Note: To extract binaries from a new set or larger set apps, follow these steps:
-
-   1.1. Make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
+ 1.1. Make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
 ```
 |-- sample_apps
 |   |-- app_name_1
@@ -82,8 +82,7 @@ Note: To extract binaries from a new set or larger set apps, follow these steps:
 |   `-- app_name_n
 
 ```
- 
-   1.2. Modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly.
+ 1.2. Modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly.
  
 2. To extract the features vector from one binary, run:
 ```
@@ -92,7 +91,7 @@ scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 3. To extract the features vectors from a set of binaries:
  3.1. Modify `extracted_bins.txt` to include the binaries you are intrested in.
  3.2. Update the input and out folders in `run_extract_fv.sh` 
- 3.2. Then run the following command: 
+ 3.3. Then run the following command: 
 ``` 
 ./scripts/Feature_Extractor/run_extract_fv.sh 
 ```
