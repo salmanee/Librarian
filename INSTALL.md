@@ -25,4 +25,60 @@ Librarian
 
 ## Using Librarian: ##
 
-You can 
+All Librarian scripts are found under `scripts/`:
+1. To Extract binaries from the apps in `sample_apps/`, run the following command:
+``` 
+python3 cluster_libs.py
+```
+
+*Note*: To extract binaries from a new set or larger set of apps, modify *apps_dir* and *dest_folder* in `cluster_libs.py` accordingly. Then make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
+        
+```
+|-- sample_apps
+|   |-- app_name_1
+|   |   |-- SHA256.apk (app version1)
+|   |   |-- SHA256.apk (app version2)
+|   |   |-- SHA256.apk (app version3)
+|   |   |   ...
+|   |   |   ...
+|   |   `-- SHA256.apk (app versionX)
+|   |-- app_name_2
+|   |-- app_name_3
+|   |-- app_name_4
+|   |-- app_name_5
+|   ...
+|   ...
+|   |
+|   `-- app_name_n
+
+```
+   
+2. To extract the features vector from one binary, run:
+```
+scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
+```
+3. To extract the features vectors from a set of binaries:
+
+   3.1. Modify `extracted_bins.txt` to include the binaries you are intrested in.
+   
+   3.2. Update the input and output folders in `run_extract_fv.sh`.
+   
+   3.3. Then run the following command: 
+``` 
+./scripts/Feature_Extractor/run_extract_fv.sh 
+```
+4. To compute the similarity score between two feature vectors, run the following command:
+```
+python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file2.json>
+```
+5. To compute the similarity between a set of feature vectors:
+
+   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are intrested in comparing.
+   
+   5.2. then run:
+   
+```
+./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
+```
+
+Examples of what the output looks like when running each of the above commands are provided under `output_examples'
