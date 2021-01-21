@@ -19,9 +19,10 @@ docker run -it -v $PWD/Librarian:/home/Librarian --rm yhuai/librarian
 
 If successful,  you will see the following messages at the bottom of your screen:
 ```
-
+[root@44c29e2ea5d4 home]# ls
+Librarian
 ```
 
 ## Using Librarian: ##
 
-XXX
+You can 
