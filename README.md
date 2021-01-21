@@ -1,5 +1,12 @@
 # Librarian
 
+This repository contains:
+* Librarian, a tool designed to identify native libraries and their versions as found in Android apps based on our novel similarity metric bin2sim.
+* The input data needed for running this tool.
+* An extended version of the evaluation results.
+
+The DOI for this repository is DOI: XXX
+
 ## Overview: ##
 The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies unknown third-party native libraries and their versions (Unknown Lib Versions) by:
 (1) extracting features that distinguish major, minor, and patch versions of libraries that are stable across platforms regardless of underlying architecture or compilation environments 
@@ -8,11 +15,11 @@ The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies u
 
 ![Figure 1](/images/approach_cropped.png) 
 
-## Feature Vector Extraction: ##
+### Feature Vector Extraction: ###
 Our binary similarity detection is based on the extraction of features from binaries combining both metadata found in ELF files as well as identifying features in different binary sections of the library. All shared libraries included in Android apps are compiled into Executable and Linkable Format (ELF) binaries. Like other object files, ELF binaries contain a symbol table with externally visible identifiers such as function names, global symbols, local symbols, and imported symbols.
 This symbol table is, on one hand, used during loading and linking and, on the other hand, used by binary analysis tools (e.g., *objdump*, *readelf*, *nm*, *pwntools*, or *angr*) to infer information about the binary.
 
-## Similarity Computation: ##
+### Similarity Computation: ###
 bin2sim is used to determine the similarity between feature vectors. Given two binaries b_1 and b_2 with respective feature vectors FV_1 and FV_2, the bin2sim is the size of the intersection of FV_1 and FV_2 (i.e., the number of common features) over the size of the union of FV_1 and FV_2 (i.e., the number of unique features). The similarity score is a floating-point value between 0 and 1, with a score of 1 indicating identical features, and a score of 0 indicating no shared features between the two libraries.
 
 ## Librarian 101: ## 
