@@ -58,10 +58,10 @@ sudo apt-get install python3-magic
 All Librarian scripts are found under `scripts/`:
 1. To Extract binaries from the apps in `sample_apps/`, run the following command:
 ``` 
-python3 clusters_libs.py
+python3 cluster_libs.py
 ```
 
-*Note*: To extract binaries from a new set or larger set apps, modify *apps_dir* and *dest_folder* in `clusters_libs.py` accordingly. Then make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
+*Note*: To extract binaries from a new set or larger set of apps, modify *apps_dir* and *dest_folder* in `cluster_libs.py` accordingly. Then make sure that your apps are arranged in a way similar to the structure in `sample_apps/`:
         
 ```
 |-- sample_apps
@@ -91,7 +91,7 @@ scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 
    3.1. Modify `extracted_bins.txt` to include the binaries you are intrested in.
    
-   3.2. Update the input and out folders in `run_extract_fv.sh` 
+   3.2. Update the input and output folders in `run_extract_fv.sh`.
    
    3.3. Then run the following command: 
 ``` 
@@ -103,7 +103,7 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ```
 5. To compute the similarity between a set of feature vectors:
 
-   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are intrested in comparing
+   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are intrested in comparing.
    
    5.2. then run:
    
@@ -111,7 +111,7 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
 
-Examples of what the output will look like when running each of the above commands are provided under `output_examples'
+Examples of what the output looks like when running each of the above commands are provided under `output_examples'
 
 ## Evaluation Results: ##
 
