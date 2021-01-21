@@ -5,3 +5,6 @@
 ```
 sudo apt-get install python3-magic
 ```
+
+Note that if you are using the docker 
+* Docker-CE version 19.03 and above (Official doc) 
