@@ -1,4 +1,7 @@
-`Librarian-ICSE2021-RQs.xlsx` contains an extended version of the evaluation results presented in the paper (Section 3). Each table’s result is represented in a separate sheet:
+Evaluation Results:
+
+`Librarian-ICSE2021-RQs.xlsx` under `evaluation-results`
+ contains an extended version of the evaluation results presented in the paper (Section 3). Each table’s result is represented in a separate sheet:
 * **inferred_libs**: Contains the results of using Librarian to infer the versions of 7251 binaries extracted from android apps. Each binary is represented in one row, with:
   * The name of the cluster/folder which the binary resides in (column A).
   * The name of the binary, represented as *binaryName_* then the *sha256 of the app* which the binary was extracted from (column B).
