@@ -37,15 +37,14 @@ Librarian's structure in a nutshell:
 |       `-- extracted_bins.txt
 ```
 
-* sample_apps: Our repository contains the top 200 apps collected from GooglePlay along with their previous releases, obtained from [AndroZoo](https://androzoo.uni.lu/). Due to the large size of this set (209 GB), we provide only 20 unique android packages as a sample with a total of 32 app versions. e.g. *com.instagram.android* has 7 different versions, where the version name is the sha256 of the app version. Naming app versions after their sha256 will enable us later to mtach each app with [version details](https://androzoo.uni.lu/lists) found in AndroZoo such as: vercode, markets, apk_size etc. 
-* UnknownLibs_bins: This folder contains biniares extracted from apps in `sample_apps` arranged into folders based on the binary sha256. (Run: `python3 cluster_libs.py` to obtain them). 
-For example, cluster/folder `ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b` contains 5 identical binaries (share the same sha256), which were extracted from 5 different apps or app versions. 
-* UnknownLibs_FVs: Feature vectors extracted from `UnknownLibs_bins` and stored in JSON files.
-* KnownLibs_FVs: Features vectors extracted from our groundTruth (KnownLibs) and stored in JSON files.
-* scripts:
-  * cluster_libs.py: Extracts biniares from the sample_apps folder and clusters them based on their sha256 (to remove duplicates and reduce run time)
-  * Feature_Extractor: Scripts needed to extract feature vectors
-  * Bin2Bin_Score_Calculator: Scripts needed for computing the similarity score between `knownLibs_FVs` and `UnknownLibs_FVs`  
+* **sample_apps**: Our repository contains the top 200 apps collected from GooglePlay along with their previous releases, obtained from [AndroZoo](https://androzoo.uni.lu/). Due to the large size of this set (209 GB), we provide only 20 unique android packages, as a sample, with a total of 32 app versions. e.g. com.instagram.android has 7 different versions, where the version name is the sha256 of the app version. Naming app versions after their sha256 will enable us to 1) distinguish between different versions of the same app, 2) easily match every app version with [version details](https://androzoo.uni.lu/lists) found in AndroZoo such as: vercode, markets, apk_size etc. 
+* **UnknownLibs_bins**: This folder contains binaries extracted from apps in `sample_apps` arranged into folders based on the binary's sha256. (Run: `python3 cluster_libs.py` to obtain them). For example, cluster/folder (ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b) contains 5 identical binaries (i.e. they share the same sha256), which were extracted from 5 different apps or app versions. 
+* **UnknownLibs_FVs**: Feature vectors extracted from `UnknownLibs_bins` and stored in JSON files.
+* **KnownLibs_FVs**: Features vectors extracted from our groundTruth (KnownLibs) and stored in JSON files.
+* **scripts**:
+  * cluster_libs.py: Extracts biniares from the sample_apps folder and clusters them based on their sha256 (to remove duplicates and reduce run time).
+  * Feature_Extractor: Scripts needed to extract feature vectors.
+  * Bin2Bin_Score_Calculator: Scripts needed for computing the similarity score between `knownLibs_FVs` and `UnknownLibs_FVs`.  
 
 ## Prerequisites: ##
 * Python3
