@@ -112,6 +112,3 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ```
 
 Examples of what the output looks like when running each of the above commands are provided under `output_examples'
-
-## Evaluation Results: ##
-
