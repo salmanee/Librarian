@@ -1,1 +1,21 @@
 
+# Librarian Installation Guide #
+
+## Download Librarian Sources: ##
+Before getting started, please make sure Docker is installed and running. You can type ```systemctl status docker``` to check the running status of Docker daemon.
+
+Next, run the following command to clone Librarian:
+```
+# Using SSH
+git clone https://github.com/salmanee/Librarian.git
+
+# Using HTTPS
+git clone git@github.com:salmanee/Librarian.git
+```
+In the same directory where Librarian reside, run the following command to start docker (whicch contains a working enviroment with all requierments installed):
+```
+docker run -it -v $PWD/Librarian:/home/Librarian --rm yhuai/librarian
+```
+
+## Using Librarian: ##
+
