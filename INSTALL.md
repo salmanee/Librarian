@@ -16,6 +16,8 @@ In the **parent** directory of Librarian, run the following command to start doc
 ```
 docker run --rm -it -v $PWD:/home yhuai/librarian
 ```
+Note that Docker only contains the environment, and the `-v` argument will mount your local copy of Librarian into the container.
+
 If successful, you will see the following message at the bottom of your screen:
 ```
 [root@44c29e2ea5d4 home]# ls
