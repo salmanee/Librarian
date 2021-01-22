@@ -62,7 +62,7 @@ Naming app versions after their sha256 will enable us to: (1) distinguish betwee
 * **UnknownLibs_bins**: This folder contains binaries extracted from apps in `sample_apps` arranged into folders based on the binary's sha256. To obtain these binaries, Run: `python3 cluster_libs.py`
 For example, the following cluster contains 5 identical binaries (i.e. they share the same sha256), which were extracted from 5 different apps or app versions: 
 ```
-|-- com.instagram.android
+|-- ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b
 |   |-- libsqlite3_15C20748A3EFC1A276283E322023BF22FC7755BCF63A389886F1780E69D17C72.so
 |   |-- libsqlite3_15C20748A3EFC1A276283E322023BF22FC7755BCF63A389886F1780E69D17C72.so
 |   |-- libsqlite3_6846F040354FE5D9FBABAC8FBC977549516EE0AC1B3AC23B35C9768C17D2D6D7.so
