@@ -60,7 +60,7 @@ scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 ```
 3. To extract the features vectors from a set of binaries:
 
-   3.1. Modify `extracted_bins.txt` to include the binaries you are intrested in.
+   3.1. Modify `extracted_bins.txt` to include the binaries you are interested in.
    
    3.2. Update the input and output folders in `run_extract_fv.sh`.
    
@@ -74,7 +74,7 @@ python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file
 ```
 5. To compute the similarity between a set of feature vectors:
 
-   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are intrested in comparing.
+   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are interested in comparing.
    
    5.2. then run:
    
