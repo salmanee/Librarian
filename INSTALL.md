@@ -72,14 +72,18 @@ python3 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.
 ```
 python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file2.json>
 ```
+
+Note that, the script currently showed binaries that matched with a similiarty score of 0.85 and higher.
+If ther similiarty sore is less than 0.85, noothing will be displayeed. you an adjust this threshold in the [script](https://github.com/salmanee/Librarian/blob/master/scripts/Bin2Bin_Score_Calculator/binsimScore.py#L75). 
+
 5. To compute the similarity between a set of feature vectors:
 
-   5.1. modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are interested in comparing.
+   5.1. Modify both `source_bin_FVS.txt` and `extracted_bin_FVS.txt` to include the binaries you are interested in comparing.
    
-   5.2. then run:
+   5.2. Then run:
    
 ```
 ./scripts/Bin2Bin_Score_Calculator/run_bin_sim.sh
 ```
 
-Examples of what the output looks like when running each of the above commands are provided under `output_examples'
+Examples of what the output looks like when running each of the above commands are provided [here](https://github.com/salmanee/Librarian/tree/master/output_examples).
