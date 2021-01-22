@@ -5,7 +5,8 @@ This repository contains:
 * The input data needed for running this tool.
 * An extended version of the evaluation results.
 
-The DOI for this repository is DOI: XXX
+The DOI for this repository is: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4456122.svg)](https://doi.org/10.5281/zenodo.4456122)
+ 
 
 ## Overview: ##
 The figure below shows the overall workflow of LibRARIAN. LibRARIAN identifies unknown third-party native libraries and their versions (Unknown Lib Versions) by:
