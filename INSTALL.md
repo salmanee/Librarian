@@ -12,12 +12,11 @@ git clone https://github.com/salmanee/Librarian.git
 # Using HTTPS
 git clone git@github.com:salmanee/Librarian.git
 ```
-In the same directory where Librarian resides, run the following command to start docker (whicch contains a working enviroment with all requierments installed):
+In the **parent** directory of Librarian, run the following command to start docker (which contains a working environment with all requirements installed):
 ```
-docker run -it -v $PWD/Librarian:/home/Librarian --rm yhuai/librarian
+docker run --rm -it -v $PWD:/home yhuai/librarian
 ```
-
-If successful,  you will see the following messages at the bottom of your screen:
+If successful, you will see the following message at the bottom of your screen:
 ```
 [root@44c29e2ea5d4 home]# ls
 Librarian
