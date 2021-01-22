@@ -45,7 +45,7 @@ Librarian's structure in a nutshell:
 ```
 
 * **sample_apps**: Our repository contains the top 200 apps collected from GooglePlay along with their previous releases, obtained from [AndroZoo](https://androzoo.uni.lu/). Due to the large size of this set (209 GB), we provide only 20 unique android packages, as a sample, with a total of 32 app versions.
-App versions are dissinguisedh by their sha256. For example, `com.instagram.android` has 7 different versions, each with a different sha256: 
+App versions are distinguished by their sha256. For example, `com.instagram.android` has 7 different versions, each with a different sha256: 
 ```
 |-- com.instagram.android
 |   |-- 0307EBAEF917BA7FFD7531918007618AD4E66D4A2BB8CA54589BE533E1A7AFBE.apk
