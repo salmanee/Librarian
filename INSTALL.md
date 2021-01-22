@@ -62,6 +62,7 @@ python3 cluster_libs.py
 ```
 python3 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 ```
+
 3. To extract the features vectors from a set of binaries:
 
    3.1. Modify `extracted_bins.txt` to include the binaries you are interested in.
@@ -72,13 +73,14 @@ python3 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.
 ``` 
 ./scripts/Feature_Extractor/run_extract_fv.sh 
 ```
+
 4. To compute the similarity score between two feature vectors, run the following command:
 ```
 python3 scripts/Bin2Bin_Score_Calculator/binsimScore.py -f <file1.json> -f <file2.json>
 ```
 
-Note that, the script currently showed binaries that matched with a similiarty score of 0.85 and higher.
-If ther similiarty sore is less than 0.85, noothing will be displayeed. you an adjust this threshold in the [script](https://github.com/salmanee/Librarian/blob/master/scripts/Bin2Bin_Score_Calculator/binsimScore.py#L75). 
+Note that, the script currently shows binaries that matches with a similiarty score of 0.85 and higher.
+If ther similiarty sore is less than 0.85, nothing will be displayed. You an adjust this threshold in the [script](https://github.com/salmanee/Librarian/blob/master/scripts/Bin2Bin_Score_Calculator/binsimScore.py#L75). 
 
 5. To compute the similarity between a set of feature vectors:
 
