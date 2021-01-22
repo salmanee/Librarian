@@ -27,7 +27,7 @@ Librarian
 ## Using Librarian: ##
 
 All Librarian scripts are found under `scripts/`:
-1. To Extract binaries from the apps in `sample_apps/`, run the following command:
+1. To Extract binaries from the apps in `sample_apps/` to `UnknownLibs_bins`, run the following command:
 ``` 
 python3 cluster_libs.py
 ```
