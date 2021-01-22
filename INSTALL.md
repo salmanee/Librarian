@@ -56,7 +56,7 @@ python3 cluster_libs.py
    
 2. To extract the features vector from one binary, run:
 ```
-scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
+python3 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.json>
 ```
 3. To extract the features vectors from a set of binaries:
 
