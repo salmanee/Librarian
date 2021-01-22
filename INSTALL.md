@@ -66,7 +66,7 @@ python3 scripts/Feature_Extractor/extract_feature_vector.py -i <lib.so> -o <out.
 
    3.1. Modify `extracted_bins.txt` to include the binaries you are interested in.
    
-   3.2. Update the input and output folders in `run_extract_fv.sh`.
+   3.2. Update the input(`foldername`) and output(`foldername2`) folders in `run_extract_fv.sh`.
    
    3.3. Then run the following command: 
 ``` 
