@@ -59,8 +59,7 @@ App versions are distinguished by their sha256. For example, `com.instagram.andr
 
 Naming app versions after their sha256 will enable us to: (1) distinguish between different versions of the same app, (2) easily match every app version with [version details](https://androzoo.uni.lu/lists) found in AndroZoo such as: vercode, markets, apk_size etc. 
 
-* **UnknownLibs_bins**: This folder contains binaries extracted from apps in `sample_apps` arranged into folders based on the binary's sha256. To obtain these binaries, Run: `python3 cluster_libs.py`
-For example, the following cluster contains 5 identical binaries (i.e. they share the same sha256), which were extracted from 5 different apps or app versions: 
+* **UnknownLibs_bins**: This folder contains binaries extracted from apps in `sample_apps` arranged into folders based on the binary's sha256. For example, the following cluster contains 5 identical binaries (i.e. they share the same sha256), which were extracted from 5 different apps or app versions: 
 ```
 |-- ca8a18f07d0d16e3ce1f4cb35d6d326fd0bbb2a4e82488a937f6feffbfa44b3b
 |   |-- libsqlite3_15C20748A3EFC1A276283E322023BF22FC7755BCF63A389886F1780E69D17C72.so
@@ -69,6 +68,7 @@ For example, the following cluster contains 5 identical binaries (i.e. they shar
 |   |-- libsqlite3_7DAD86162C65EEA3E9CC7918F5A9E3233386C7122AA012B34EFC795C9AAB8A6F.so
 |   `-- libsqlite3_FE53608BEE7DE37893F5221508EE56761FF352AFF54956ABDB22BA5A3C38A401.so
 ```  
+To obtain these binaries, Run: `python3 cluster_libs.py`
 
 * **UnknownLibs_FVs**: Feature vectors extracted from `UnknownLibs_bins` and stored in JSON files.
 
